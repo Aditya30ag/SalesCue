@@ -32,13 +32,26 @@ const Header = () => {
             : 'bg-transparent'
         }`}
       >
+        <div className="fixed top-2 left-10 z-50 animate-fade-in">
+          <Link to="/" >
+          <div className="relative group" >
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-violet-500 to-amber-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
+            <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-black rounded-full border border-slate-800 overflow-hidden group-hover:scale-110 transition-transform duration-300">
+              {/* Replace with your actual logo or initial */}
+              
+              {/* Uncomment and use this for an actual image logo */}
+              <img src="/logo.png" alt="Hirecentive Logo" className="w-full h-full object-cover" />
+            </div>
+          </div>
+          </Link>
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                SalesCue
-              </span>
-            </Link>
+          <Link to="/" className="flex items-center">
+  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent md:block hidden">
+    SalesCue
+  </span>
+</Link>
   
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
