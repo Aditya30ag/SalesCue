@@ -40,7 +40,7 @@ const Header = () => {
               <Link to="/">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-violet-500 to-amber-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
-                  <div className="relative w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-black rounded-full border border-slate-800 overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-black rounded-full border border-slate-800 overflow-hidden group-hover:scale-110 transition-transform duration-300">
                     {/* Replace with your actual logo or initial */}
                     <img
                       src="/logo.png"
@@ -52,9 +52,9 @@ const Header = () => {
               </Link>
             </div>
             <div>
-              <Link to="/" className="flex items-center pl-2">
+              <Link to="/" className="flex items-center pl-4">
                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  alesCue
+                  SalesCue
                 </span>
               </Link>
             </div>
