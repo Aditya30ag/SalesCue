@@ -15,22 +15,18 @@ const Header = () => {
   
       // Check for user's preferred color scheme
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setIsDarkMode(true);
+
         document.documentElement.classList.add('dark');
       }
   
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-  
-    const toggleDarkMode = () => {
-      setIsDarkMode(!isDarkMode);
-      document.documentElement.classList.toggle('dark');
-    };
-  
+    
+
     return (
       <header 
-        className={`fixed w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled 
             ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' 
             : 'bg-transparent'
@@ -48,42 +44,78 @@ const Header = () => {
             <nav className="hidden md:flex items-center space-x-8">
               <NavLink to="/" className={({isActive}) => 
                 `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
+                  isActive 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : isScrolled 
+                      ? 'text-gray-700 dark:text-gray-300' 
+                      : isDarkMode 
+                        ? 'text-white' 
+                        : 'text-black'
                 }`
               }>
                 Home
               </NavLink>
               <NavLink to="/features" className={({isActive}) => 
                 `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
+                  isActive 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : isScrolled 
+                      ? 'text-gray-700 dark:text-gray-300' 
+                      : isDarkMode 
+                        ? 'text-white' 
+                        : 'text-black'
                 }`
               }>
                 Features
               </NavLink>
               <NavLink to="/pricing" className={({isActive}) => 
                 `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
+                  isActive 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : isScrolled 
+                      ? 'text-gray-700 dark:text-gray-300' 
+                      : isDarkMode 
+                        ? 'text-white' 
+                        : 'text-black'
                 }`
               }>
                 Pricing
               </NavLink>
               <NavLink to="/testimonials" className={({isActive}) => 
                 `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
+                  isActive 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : isScrolled 
+                      ? 'text-gray-700 dark:text-gray-300' 
+                      : isDarkMode 
+                        ? 'text-white' 
+                        : 'text-black'
                 }`
               }>
                 Testimonials
               </NavLink>
               <NavLink to="/about" className={({isActive}) => 
                 `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
+                  isActive 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : isScrolled 
+                      ? 'text-gray-700 dark:text-gray-300' 
+                      : isDarkMode 
+                        ? 'text-white' 
+                        : 'text-black'
                 }`
               }>
                 About
               </NavLink>
               <NavLink to="/faq" className={({isActive}) => 
                 `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'
+                  isActive 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : isScrolled 
+                      ? 'text-gray-700 dark:text-gray-300' 
+                      : isDarkMode 
+                        ? 'text-white' 
+                        : 'text-black'
                 }`
               }>
                 FAQ
@@ -91,21 +123,7 @@ const Header = () => {
             </nav>
   
             <div className="hidden md:flex items-center space-x-4">
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                aria-label="Toggle dark mode"
-              >
-                {isDarkMode ? (
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                  </svg>
-                )}
-              </button>
+              
               <Link 
                 to="/contact" 
                 className="px-5 py-2.5 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
@@ -116,7 +134,13 @@ const Header = () => {
   
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className={`md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${
+                isScrolled 
+                  ? 'text-gray-700 dark:text-gray-300' 
+                  : isDarkMode 
+                    ? 'text-white' 
+                    : 'text-black'
+              }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <HiX className="h-6 w-6" /> : <HiOutlineMenuAlt3 className="h-6 w-6" />}
@@ -178,21 +202,7 @@ const Header = () => {
                   FAQ
                 </NavLink>
                 <div className="pt-2 flex items-center">
-                  <button
-                    onClick={toggleDarkMode}
-                    className="p-2 mr-4 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    aria-label="Toggle dark mode"
-                  >
-                    {isDarkMode ? (
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                    ) : (
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                      </svg>
-                    )}
-                  </button>
+                  
                   <Link 
                     to="/contact" 
                     className="flex-1 px-5 py-2.5 text-center rounded-md bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium"
@@ -209,4 +219,3 @@ const Header = () => {
   };
   
   export default Header;
-    

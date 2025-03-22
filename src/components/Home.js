@@ -11,7 +11,6 @@ import {
 } from 'react-icons/hi';
 import FeatureCard from './FeatureCard';
 import StepCard from './StepCard';
-import TestimonialSlider from './TestimonialSlider';
 
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +20,7 @@ const Home = () => {
     }, []);
   
     return (
-      <div className="pt-20">
+      <div className="">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
           {/* Background gradients */}
@@ -46,7 +45,7 @@ const Home = () => {
                   Sales Sidekick
                 </span>
               </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8">
+              <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 dark:text-gray-800 mb-8">
                 Instantly unlock tailored sales rebuttals and strategic prompts to win every deal.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -98,7 +97,7 @@ const Home = () => {
         <section className="bg-white dark:bg-gray-900 py-24 relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Revolutionize Your Sales Conversations</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Revolutionize Your Sales Conversations</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 SalesCue empowers your sales team with AI-driven insights, delivered exactly when you need them.
               </p>
@@ -160,7 +159,7 @@ const Home = () => {
         <section className="py-24 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">How SalesCue Works</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">How SalesCue Works</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 Get up and running in minutes with our simple three-step process.
               </p>
@@ -211,11 +210,11 @@ const Home = () => {
           </div>
         </section>
   
-        {/* Testimonial Preview */}
-        <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+        
+        {/* <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Our Customers Say</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">What Our Customers Say</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 See how SalesCue is transforming sales conversations for teams worldwide.
               </p>
@@ -235,8 +234,8 @@ const Home = () => {
               </Link>
             </div>
           </div>
-        </section>
-  
+        </section> */}
+      {/* <TestimonialSlider /> */}
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:16px_16px]"></div>
@@ -270,4 +269,3 @@ const Home = () => {
   };
   
   export default Home;
-    

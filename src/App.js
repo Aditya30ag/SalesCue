@@ -3,12 +3,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Features from "./components/Features";
 import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import Faq from "./components/Faq";
 // import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import TestimonialSlider from "./components/TestimonialSlider";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,6 +17,7 @@ function App() {
       path: "/",
       element: (
         <>
+        <ScrollToTop/>
         <Header />
           <Home /><Footer />
         </>
@@ -25,6 +27,7 @@ function App() {
       path: "/features",
       element: (
         <>
+        <ScrollToTop/>
         <Header />
           <Features />
           <Footer />
@@ -35,6 +38,7 @@ function App() {
       path: "/pricing",
       element: (
         <>
+        <ScrollToTop/>
         <Header />
           <Pricing />
           <Footer />
@@ -45,8 +49,9 @@ function App() {
       path: "/testimonials",
       element: (
         <>
+        <ScrollToTop/>
         <Header />
-          <Testimonials/>
+          <TestimonialSlider/>
           <Footer />
         </>
       ),
@@ -55,6 +60,7 @@ function App() {
       path: "/about",
       element: (
         <>
+        <ScrollToTop/>
         <Header />
           <About/>
           <Footer />
@@ -65,6 +71,7 @@ function App() {
       path: "/faq",
       element: (
         <>
+        <ScrollToTop/>
         <Header />
           <Faq/>
           <Footer />
